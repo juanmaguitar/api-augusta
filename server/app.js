@@ -8,7 +8,15 @@ const routesPrivate = require('./routes/private')
 
 const debug = require('debug')('methods-log')
 
+const getFilters = require('./middleware/Filters')
+
 const app = express()
+
+app.use((req,res,next) => {
+   const {hide} = req.query
+   getFilters(req)
+  next()
+})
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
