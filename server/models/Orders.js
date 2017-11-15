@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const collection = 'orders'
 
 const OrdersSchema = new Schema({
-  customer_id: Schema.ObjectId,
+  customer_id: { type: Schema.ObjectId, ref: "Customer" } ,
   entry_date:{ type: Date, default: Date.now },
   state: String,
   articles: [{
