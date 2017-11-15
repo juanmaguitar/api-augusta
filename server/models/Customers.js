@@ -4,7 +4,6 @@ const Schema = mongoose.Schema
 const collection = 'customers'
 
 const CustomerSchema = new Schema({
-  id: Number,
   entry_date:{ type: Date, default: Date.now },
   contact: String,
   address: String,
