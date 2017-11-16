@@ -4,19 +4,10 @@ const Schema = mongoose.Schema
 const collection = 'orders'
 
 const OrdersSchema = new Schema({
+  id:Number,
   customer_id: { type: Schema.ObjectId, ref: "Customer" } ,
   entry_date:{ type: Date, default: Date.now },
-  state: String,
-  articles: [{
-    final_customer_code: String,
-    barcode: Number,
-    type: {type: String},
-    leather: String,
-    color: String,
-    notes: String,
-    price: Number,
-    complements: [String]
-  }]
+  articles: [{type: Schema.ObjectId, ref: "Articles"}]
 }, { collection })
 
 OrdersSchema.plugin(passportLocalMongoose)

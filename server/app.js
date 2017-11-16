@@ -8,13 +8,12 @@ const routesPrivate = require('./routes/private')
 
 const debug = require('debug')('methods-log')
 
-const getFilters = require('./middleware/Filters')
+const getFilterState = require('./middleware/FilterState')
 
 const app = express()
 
 app.use((req,res,next) => {
-   const {hide} = req.query
-   getFilters(req)
+   getFilterState(req)
   next()
 })
 
@@ -22,8 +21,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use( (req,res,next) => {
-  const { method, path, body } = req
-  debug({ method, path, body })
+  const { method, path, body,state } = req
+  debug({ method, path, body,state })
   next()
 })
 

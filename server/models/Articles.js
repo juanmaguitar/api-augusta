@@ -4,12 +4,18 @@ const Schema = mongoose.Schema
 const collection = 'articles'
 
 const ArticlesSchema = new Schema({
-  type: String,
+  customer_id: { type: Schema.ObjectId, ref: "Customers" } ,
+  entry_date:{ type: Date, default: Date.now },
+  output_date:Date,
+  final_customer_code: String,
+  barcode: Number,
+  type: {type: String},
   leather: String,
-  base_price: Number,
-  assign_prices: [String],
-  prices_per_customer:[{id_customer:Schema.ObjectId,price: String}]
-
+  color: String,
+  notes: String,
+  price: Number,
+  state: String,
+  complements: [String]
 }, { collection })
 
 ArticlesSchema.plugin(passportLocalMongoose)
