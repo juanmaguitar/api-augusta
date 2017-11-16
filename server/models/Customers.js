@@ -8,6 +8,7 @@ const CustomerSchema = new Schema({
   contact: String,
   address: String,
   city: String,
+  email: String,
   contact_id: String,
   fiscal_name: String,
   fiscal_address: String,
