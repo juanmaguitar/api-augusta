@@ -1,9 +1,12 @@
 const Articles = require('../../../models/Articles')
+const Customers = require('../../../models/Customers')
 
 function getArticles( req, res ) {
 	const state= (req.state) ? {state:req.state} : {}
   Articles.find(state, function(err, articles) {
-  	res.json(articles);  
+  	Articles.populate(articles, {path: "customer_id"},function(err, orders){
+        	res.json(orders);
+        })
   });
 }
 
