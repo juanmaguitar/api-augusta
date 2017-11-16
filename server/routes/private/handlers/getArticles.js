@@ -1,7 +1,8 @@
 const Articles = require('../../../models/Articles')
 
 function getArticles( req, res ) {
-  Articles.find({state:req.state}, function(err, articles) {
+	const state= (req.state) ? {state:req.state} : {}
+  Articles.find(state, function(err, articles) {
   	res.json(articles);  
   });
 }
