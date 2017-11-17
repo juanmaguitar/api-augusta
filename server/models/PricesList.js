@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 const passportLocalMongoose = require('passport-local-mongoose')
 const Schema = mongoose.Schema
-const collection = 'articlesPrices'
+const collection = 'pricesList'
 
-const ArticlesPricesSchema = new Schema({
+const PricesListSchema = new Schema({
   type: String,
   leather: String,
   base_price: Number,
@@ -12,6 +12,6 @@ const ArticlesPricesSchema = new Schema({
 
 }, { collection })
 
-ArticlesPricesSchema.plugin(passportLocalMongoose)
+PricesListSchema.plugin(passportLocalMongoose)
 
-module.exports = mongoose.model('ArticlesPrices', ArticlesPricesSchema)
+module.exports = mongoose.model('PricesList', PricesListSchema)

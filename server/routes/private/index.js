@@ -6,7 +6,7 @@ const getMyInfo = require('./handlers/getMyInfo')
 const getCustomers = require('./handlers/getCustomers')
 const getCustomersById = require('./handlers/getCustomersById')
 const getArticles = require('./handlers/getArticles')
-const getArticlesPrices = require('./handlers/getArticlesPrices')
+const getPricesList = require('./handlers/getPricesList')
 const getOrders = require('./handlers/getOrders')
 
 
@@ -16,7 +16,7 @@ router.get('/me', getMyInfo)
 router.get('/customers', getCustomers)
 router.get('/customer/:id', getCustomersById)
 router.get('/articles', getArticles)
-router.get('/articlesPrices', getArticlesPrices)
+router.get('/pricesList', getPricesList)
 router.get('/orders', getOrders)
 
 
