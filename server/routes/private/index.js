@@ -7,7 +7,7 @@ const getCustomers = require('./handlers/getCustomers')
 const getCustomersById = require('./handlers/getCustomersById')
 const getArticles = require('./handlers/getArticles')
 const getPricesList = require('./handlers/getPricesList')
-const getOrders = require('./handlers/getOrders')
+const getDeliveryNotes = require('./handlers/getDeliveryNotes')
 
 
 router.use( passport.authenticate('jwt', { session: false } ) )
@@ -17,7 +17,7 @@ router.get('/customers', getCustomers)
 router.get('/customer/:id', getCustomersById)
 router.get('/articles', getArticles)
 router.get('/pricesList', getPricesList)
-router.get('/orders', getOrders)
+router.get('/deliveryNotes', getDeliveryNotes)
 
 
 module.exports = router
