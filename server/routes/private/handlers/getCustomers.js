@@ -1,7 +1,8 @@
 const Customers = require('../../../models/Customers')
 
 function getCustomers( req, res ) {
-  Customers.find({}, function(err, users) {
+	const customer= (req.customer) ? {type:req.customer} : {}
+  Customers.find(customer, function(err, users) {
   	res.json(users);  
   });
 }
