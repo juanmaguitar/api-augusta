@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "DEBUG=methods-log node index",
     "dev": "DEBUG=methods-log  nodemon index"
   },
   "repository": {
