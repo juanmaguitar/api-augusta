@@ -13,7 +13,7 @@ function getCustomersPayments( req, res ) {
           if(valorActual.customer_id.contact === customer.client){
             acc = acc.map(function(customer){
               if(customer.client === valorActual.customer_id.contact){
-                customer.sumAllInvoces += valorActual.price
+                customer.plusAllInvoces += valorActual.price
               }
             return customer
               })
@@ -25,8 +25,9 @@ function getCustomersPayments( req, res ) {
           //console.log(valorActual.customer_id.payments)
          acc.push(
           {'client':valorActual.customer_id.contact,
-           'sumAllInvoces':valorActual.price,
-           'sumAllPayments':getSumPayments(valorActual.customer_id.payments)
+           'plusAllInvoces':valorActual.price,
+           'plusAllPayments':getSumPayments(valorActual.customer_id.payments
+            )
            
           })
         return acc

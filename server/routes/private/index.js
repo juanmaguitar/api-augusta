@@ -8,12 +8,13 @@ const getArticles = require('./handlers/getArticles')
 const getPricesList = require('./handlers/getPricesList')
 const getDeliveryNotes = require('./handlers/getDeliveryNotes')
 
+const updateCustomer = require('./handlers/update/updateCustomer')
 
 router.use( passport.authenticate('jwt', { session: false } ) )
 
-
 router.get('/customers', getCustomers)
 router.get('/customers/payments', getCustomersPayments)
+router.put('/customer/:id',updateCustomer)
 router.get('/articles', getArticles)
 router.get('/pricesList', getPricesList)
 router.get('/deliveryNotes', getDeliveryNotes)
