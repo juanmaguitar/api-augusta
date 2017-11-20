@@ -19,22 +19,13 @@ const CustomerSchema = new Schema({
   inactive: Boolean,
   notes: String,
   delivery_type: String,
-  delivery_days: []
+  delivery_days: [],
+  payments:[{
+    price:Number,
+    date:{type:Date, default: Date.now}
+  }]
 }, { collection })
 
 CustomerSchema.plugin(passportLocalMongoose)
 
 module.exports = mongoose.model('Customers', CustomerSchema)
-
-
-/* 
-
-----------------Table Particular-----------
-| Contact || Phone | Email || Contact_id|| City || Address | Notes |
-
-----------------Table Empresa-----------
-| fiscal_name | Contact || Address || City | Email || Contact_id|| Phone | Notes |
-
-
-
-*/
