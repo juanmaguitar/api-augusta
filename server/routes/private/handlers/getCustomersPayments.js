@@ -1,68 +1,46 @@
 const Customers = require('../../../models/Customers')
 const Articles = require('../../../models/Articles')
 const ObjectId = require('mongoose').Types.ObjectId; 
+
 function getCustomersPayments( req, res ) {
-//  Articles.find({'state':'finalized'}, function(err, article) {
-//       Customers.populate(article, {path: "customer_id"},function(err, article){
-//           const result ={
-//             "contact": "abel",
-//             "avg": 450
-//           }
-//           const resultado= article.reduce(function(valorAnterior, valorActual,i, article){
-//             if(valorActual.customer_id._id === valorActual.customer_id.contact){
-//               return valorActual.customer_id
-//             }
-//             //return valorActual.customer_id.contact
-//             //if(article.customer_id._id){}
-//           },{})
-//           res.json(resultado);
-//         })
-//     })  
-// }
-
-  // Customers.find({}, function(err, customers) {
-  //   Articles.find({'customer_id':ObjectId('5a0c0ac463bb9ae2b6d99323')},function(err,articles){
-  //     res.json(articles); 
-  //   })
-  //   //res.json(customers);  
-  // });
-
-  // Customers.find()
-  //   .then( customers => {
-  //     return Articles.find({ "customer_id": customers[0]._id })
-  //   })
-  //   .then( articles => {res.json(articles)})
-    
-
-  Customers.findById('5a0c0ac463bb9ae2b6d99323')
-    .then( customer => {
-      console.log(customer._id)
-      return Articles.find({ "customer_id": customer._id }) 
+  Articles.find({}, function(err, articles) {
+    Customers.populate(articles, {path: "customer_id"},function(err, articles){
+      //hacemos un reduce para devolver un object de este formato [{client:'a', SumPrive:100}]
+      const result = articles.reduce(function(acc, valorActual){
+        //buscado si el cliente que estamos mirando en la interacion ya lo guardamos en el acumulador
+        //si es así le sumamos el price, si no, lo añadimos al acumulador
+        const existCustomer = acc.find(function(customer){
+          if(valorActual.customer_id.contact === customer.client){
+            acc = acc.map(function(customer){
+              if(customer.client === valorActual.customer_id.contact){
+                customer.sumAllInvoces += valorActual.price
+              }
+            return customer
+              })
+           }
+          return valorActual.customer_id.contact === customer.client;
+        })
+      //aquí añadido un cliente al acumulador si no lo teniamos ya antes
+        if(existCustomer) return acc
+          //console.log(valorActual.customer_id.payments)
+         acc.push(
+          {'client':valorActual.customer_id.contact,
+           'sumAllInvoces':valorActual.price,
+           'sumAllPayments':getSumPayments(valorActual.customer_id.payments)
+           
+          })
+        return acc
+      },[])
+      res.json(result);  
     })
-    .then( articles => {
-      res.json(articles)
-    })  
-  // Customers.findById("5a0c0ac463bb9ae2b6d99323")
-  //   .then( customer => {
-  //     console.log(customer)
-  //     Articles.find({ "customer_id": customer._id }) 
-  //   })
-  //   .then( articles => {
-  //     res.json(articles)
-  //   })
-  //   .catch( error =>{
-  //     res.json({ error })
-  //   })
-
-    // ))
-    // .then( articles => {res.json(articles)})
-  
+  })  
 }
+
 module.exports = getCustomersPayments
-
-//Cliente | avg | Pagado | Diferencia
-
-// const result ={
-//             "contact": "abel",
-//             "avg": 450
-//           }
+//[1, 2, 3].reduce((a, b) => a + b, 0);
+function getSumPayments(payments){
+   //console.log(payments)
+  return payments.reduce( function(a, b){
+        return a + b.price;
+    }, 0);
+}
