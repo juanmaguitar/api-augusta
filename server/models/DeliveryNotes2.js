@@ -3,7 +3,6 @@ const passportLocalMongoose = require('passport-local-mongoose')
 const Schema = mongoose.Schema
 const collection = 'deliveryNotes'
 
-
 const DeliveryNotesSchema = new Schema({
   id:Number,
   customer_id: { type: Schema.ObjectId, ref: "Customer" } ,
