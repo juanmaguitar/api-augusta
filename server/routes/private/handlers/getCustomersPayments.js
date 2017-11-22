@@ -32,7 +32,7 @@ function getCustomersPayments( req, res ) {
           })
         return acc
       },[])
-      res.json(result);  
+      res.status(200).json(result);  
     })
   })  
 }

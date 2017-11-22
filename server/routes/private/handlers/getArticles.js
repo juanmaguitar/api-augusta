@@ -5,7 +5,7 @@ function getArticles( req, res ) {
 	const state= (req.state) ? {state:req.state} : {}
   Articles.find(state, function(err, articles) {
   	Articles.populate(articles, {path: "customer_id"},function(err, orders){
-        	res.json(orders);
+        	res.status(200).json(orders);
         })
   });
 }

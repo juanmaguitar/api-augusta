@@ -7,7 +7,7 @@ function updateCustomer( req, res ) {
   }else {
     Customers.findByIdAndUpdate(id, { $set: req.body}, { new: true }, function (err, customer) {
       if (err) return handleError(err);
-      res.send(customer);
+      res.status(200).send(customer);
     })
   }
 }
