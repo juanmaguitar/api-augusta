@@ -18,7 +18,7 @@ const CustomerSchema = new Schema({
   phone: Number,
   inactive: Boolean,
   notes: String,
-  delivery_type: String,
+  delivery_type: Boolean,
   delivery_days: [],
   payments:[{
     price:Number,
