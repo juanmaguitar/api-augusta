@@ -5,7 +5,7 @@ const collection = 'customers'
 
 const CustomerSchema = new Schema({
   entry_date:{ type: Date, default: Date.now },
-  contact: String,
+  contact: {type:String,required: true},
   address: String,
   city: String,
   email: String,
