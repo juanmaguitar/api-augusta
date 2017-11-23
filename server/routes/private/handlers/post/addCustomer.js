@@ -1,13 +1,11 @@
 const Customers = require('../../../../models/Customers')
 
 function addCustomer( req, res ) {
-
   const newCustomer = new Customers(req.body);
   newCustomer.save(function (err) {
-  if (err) return handleError(err);
-   // saved!
-  res.status(200).send("Guardado");
-})
+    if (err) res.status(400).send(err.message)
+    res.status(200).send("Saved");
+  })
 }
 
 module.exports = addCustomer
