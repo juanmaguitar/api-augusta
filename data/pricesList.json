@@ -1,0 +1,158 @@
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d99283"),
+	"assign_prices" : [
+		NumberInt("20"),
+		NumberInt("18"),
+		NumberInt("19")
+	],
+	"base_price" : NumberInt("12"),
+	"leather" : "Ante",
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Falda"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d99284"),
+	"assign_prices" : [
+		NumberInt("20")
+	],
+	"base_price" : NumberInt("20"),
+	"leather" : "Ante",
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Pantalon"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d99285"),
+	"assign_prices" : [
+		NumberInt("15"),
+		NumberInt("21"),
+		NumberInt("17")
+	],
+	"base_price" : NumberInt("12"),
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Nórdico"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d99286"),
+	"assign_prices" : [
+		NumberInt("20")
+	],
+	"base_price" : NumberInt("7"),
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Plumas"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d99287"),
+	"assign_prices" : [
+		NumberInt("20"),
+		NumberInt("18")
+	],
+	"base_price" : NumberInt("12"),
+	"leather" : "Pekari",
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Cazadora"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d99288"),
+	"assign_prices" : [
+		NumberInt("20"),
+		NumberInt("17")
+	],
+	"base_price" : NumberInt("30"),
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Piel de vaca"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d99289"),
+	"assign_prices" : [
+		NumberInt("20"),
+		NumberInt("24")
+	],
+	"base_price" : NumberInt("10"),
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Vestido"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d9928a"),
+	"assign_prices" : [
+		NumberInt("20"),
+		NumberInt("20"),
+		NumberInt("15")
+	],
+	"base_price" : NumberInt("15"),
+	"leather" : "Nobuk color",
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Chaqueta"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d9928b"),
+	"assign_prices" : [
+		NumberInt("20"),
+		NumberInt("20"),
+		NumberInt("14")
+	],
+	"base_price" : NumberInt("7"),
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Cortina"
+},
+{
+	"_id" : ObjectId("5a0c097363bb9ae2b6d9928c"),
+	"assign_prices" : [
+		NumberInt("12"),
+		NumberInt("15"),
+		NumberInt("25")
+	],
+	"base_price" : NumberInt("20"),
+	"leather" : "Nobuk",
+	"prices_per_customer" : [
+		{
+			"id_customer" : NumberInt("1"),
+			"prices" : NumberInt("20")
+		}
+	],
+	"type" : "Chaqutea"
+},
