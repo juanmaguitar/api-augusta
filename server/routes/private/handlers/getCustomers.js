@@ -1,10 +1,10 @@
 const Customers = require('../../../models/Customers')
 
-function getCustomers( req, res ) {
-	const customer= (req.customer) ? {type:req.customer} : {}
-  Customers.find(customer, function(err, users) {
-  	res.status(200).json(users);  
-  });
+async function getCustomers( req, res ) {
+  const { customer: type } = req
+	const query = type ? { type } : {}
+  const customers = await Customers.find(query)
+  res.status(200).json(customers)
 }
 
 module.exports = getCustomers
