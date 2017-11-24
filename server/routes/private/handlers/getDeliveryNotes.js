@@ -7,15 +7,6 @@ async function getDeliveryNotes( req, res ) {
 	const deliveryNote = await Customers.populate(notes, { path: "customer_id" })
 	res.status(200).json(deliveryNote);
 
-	// DeliveryNotes.find()
-	// 	.then(notes => Customers.populate(notes, {path: "customer_id"}) )
-	// 	.then(deliveryNote => res.status(200).json(deliveryNote) )
-	
- 	// DeliveryNotes.find({}, function(err, deliveryNote) {
-    // 	Customers.populate(deliveryNote, {path: "customer_id"},function(err, deliveryNote){
-    //     	res.status(200).json(deliveryNote);
-    //     })
-    // })	
 }
 
 module.exports = getDeliveryNotes
