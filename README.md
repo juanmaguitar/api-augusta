@@ -44,7 +44,7 @@ __Endpoints__:
 
 ```sh
 get /customers
-get/customers/payments
+get /customers/payments
 get /articles
 get /pricesList
 get /deliveryNotes
