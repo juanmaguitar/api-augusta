@@ -15,6 +15,7 @@ mongoimport --db augusta --collection pricesList --file pricesList.json
 mongoimport --db augusta --collection users --file users.json
 ```
 __Variables de entorno__:
+
 Crear las variables de entorno en el archivo `env` en la raiz del proyecto.
 
 ```sh
