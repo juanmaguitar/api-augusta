@@ -24,6 +24,22 @@ URL_DB=mongodb://localhost:27017/augusta
 SECRET=un texto cualquiera
 ```
 
+__Iniciar proyecto:
+
+
+```sh
+npm install
+npm start
+```
+
+__Obtener token__:
+
+```sh
+POST http://localhost:3000/login
+username: abel@canet.com
+password: 1234
+```
+
 __Obtener token__:
 
 ```sh
