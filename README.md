@@ -24,7 +24,7 @@ URL_DB=mongodb://localhost:27017/augusta
 SECRET=un texto cualquiera
 ```
 
-__Iniciar proyecto:
+__Iniciar proyecto__:
 
 
 ```sh
