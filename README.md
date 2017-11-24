@@ -1,0 +1,33 @@
+Quickstart
+----------
+
+
+
+__mongodb__:
+
+En la carpeta `data` están las colecciones de prueba para importar en la base de datos `augusta`
+
+```
+mongoimport --db augusta --collection articles --file articles.json
+mongoimport --db augusta --collection customers --file customers.json
+mongoimport --db augusta --collection deliveryNotes --file deliveryNotes.json
+mongoimport --db augusta --collection pricesList --file pricesList.json
+mongoimport --db augusta --collection users --file users.json
+```
+__Variables de entorno__:
+Crear las variables de entorno en el archivo `env` en la raiz del proyecto.
+
+```sh
+PORT=3000
+URL_DB=mongodb://localhost:27017/augusta
+SECRET=un texto cualquiera
+```
+
+__Obtener token__:
+
+```sh
+POST http://localhost:3000/login
+username: abel@canet.com
+password: 1234
+```
+
