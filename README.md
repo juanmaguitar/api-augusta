@@ -39,3 +39,21 @@ POST http://localhost:3000/login
 username: abel@canet.com
 password: 1234
 ```
+
+__Endpoints__:
+
+```sh
+get /customers
+get/customers/payments
+get /articles
+get /pricesList
+get /deliveryNotes
+
+put /customer/:id
+put /pricesList/:id
+
+post /login
+post /register
+post /customer
+```
+
